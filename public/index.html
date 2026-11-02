@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Residential and commercial landscape maintenance from Thompson Landscape Company. Request an estimate.">
+  <title>Thompson Landscape Company</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #20382b;
+      background: #f6f5ef;
+    }
+    .container { width: min(1050px, 90%); margin: auto; }
+    header { background: white; padding: 20px 0; }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo { font-size: 23px; font-weight: bold; line-height: 1.2; }
+    .logo small {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .button {
+      display: inline-block;
+      background: #214e37;
+      color: white;
+      padding: 13px 20px;
+      border: none;
+      border-radius: 7px;
+      text-decoration: none;
+      cursor: pointer;
+      font: inherit;
+      font-weight: bold;
+    }
+    .button:disabled { opacity: .6; cursor: wait; }
+    .hero {
+      background: #173e2c;
+      color: white;
+      padding: 80px 0;
+    }
+    .hero h1 {
+      max-width: 800px;
+      font-size: clamp(38px, 7vw, 66px);
+      line-height: 1.1;
+      margin: 15px 0 25px;
+    }
+    .hero p { max-width: 650px; font-size: 19px; color: #e1ebdf; }
+    .hero .button { background: #d4e9a4; color: #173e2c; margin-top: 15px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: 2px; font-size: 12px; }
+    section { padding: 60px 0; }
+    h2 { font-size: 34px; line-height: 1.2; margin-top: 0; }
+    h3 { font-size: 23px; line-height: 1.3; }
+    .cards, .form-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    .card, form {
+      background: white;
+      border: 1px solid #dce3d8;
+      border-radius: 14px;
+      padding: 28px;
+    }
+    .card li { margin-bottom: 10px; }
+    .card a { color: #214e37; font-weight: bold; }
+    .steps { background: #e8eedf; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    label { display: block; font-size: 14px; font-weight: bold; margin-bottom: 16px; }
+    input:not([type="checkbox"]), select, textarea {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #bbc9b8;
+      border-radius: 6px;
+      background: white;
+      color: #20382b;
+      font: inherit;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-weight: normal;
+      font-size: 12px;
+    }
+    .checkbox input { margin-top: 5px; flex-shrink: 0; }
+    .fine { font-size: 12px; color: #58665b; }
+    .hidden-field { position: absolute; left: -9999px; }
+    #status { font-size: 14px; }
+    footer { background: #173e2c; color: white; padding: 28px 0; }
+    :focus-visible { outline: 3px solid #8da65b; outline-offset: 3px; }
+    @media (max-width: 700px) {
+      .cards, .form-layout, .steps-grid { grid-template-columns: 1fr; }
+      .hero { padding: 55px 0; }
+      .header-row .button { font-size: 12px; padding: 10px; }
+      .logo { font-size: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-row">
+      <div class="logo">
+        THOMPSON
+        <small>Landscape Company</small>
+      </div>
+      <a class="button" href="#estimate">Request an estimate</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Residential & commercial landscape maintenance</span>
+        <h1>A beautiful property.<br>One less thing to manage.</h1>
+        <p>
+          Let’s build a landscape maintenance plan around your home,
+          business, or managed property.
+        </p>
+        <a class="button" href="#estimate">Get started</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Care for the places that matter.</h2>
+        <div class="cards">
+          <article class="card">
+            <span class="eyebrow">Residential</span>
+            <h3>More time enjoying your yard.</h3>
+            <p>Discuss the maintenance your home needs.</p>
+            <ul>
+              <li>Lawn mowing, edging, and trimming</li>
+              <li>Landscape bed care</li>
+              <li>Seasonal cleanup</li>
+              <li>Mulch and landscape refresh options</li>
+            </ul>
+            <a href="#estimate" data-property="residential">
+              Request residential care →
+            </a>
+          </article>
+
+          <article class="card">
+            <span class="eyebrow">Commercial</span>
+            <h3>A welcoming first impression.</h3>
+            <p>Explore a maintenance scope for your business or property.</p>
+            <ul>
+              <li>Recurring grounds maintenance</li>
+              <li>Entrance and common-area care</li>
+              <li>Seasonal cleanup</li>
+              <li>Property walkthroughs and proposals</li>
+            </ul>
+            <a href="#estimate" data-property="commercial">
+              Request commercial care →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps">
+      <div class="container">
+        <h2>Getting started is simple.</h2>
+        <div class="steps-grid">
+          <div>
+            <h3>1. Tell us what you need</h3>
+            <p>Share your property address and maintenance priorities.</p>
+          </div>
+          <div>
+            <h3>2. Discuss your property</h3>
+            <p>Review your needs and whether a site visit is necessary.</p>
+          </div>
+          <div>
+            <h3>3. Review your estimate</h3>
+            <p>Confirm scope, pricing, and availability before booking.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="estimate">
+      <div class="container form-layout">
+        <div>
+          <span class="eyebrow">Let’s talk landscape</span>
+          <h2>Request a maintenance estimate.</h2>
+          <p>
+            Fill out this form to start the conversation about your
+            residential or commercial property.
+          </p>
+          <p>
+            Managing multiple locations? Include them in the property
+            details below.
+          </p>
+          <p class="fine">
+            This request does not book service. Pricing, service area,
+            scope, and scheduling must be confirmed.
+          </p>
+        </div>
+
+        <form id="lead-form">
+          <label>
+            Full name *
+            <input name="name" autocomplete="name" maxlength="120" required>
+          </label>
+
+          <label>
+            Email *
+            <input type="email" name="email" autocomplete="email"
+              maxlength="200" required>
+          </label>
+
+          <label>
+            Phone
+            <input type="tel" name="phone" autocomplete="tel" maxlength="40">
+          </label>
+
+          <label>
+            Property type *
+            <select name="propertyType" id="property-type" required>
+              <option value="">Choose one</option>
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial / managed property</option>
+            </select>
+          </label>
+
+          <label>
+            Company or community name
+            <input name="company" autocomplete="organization" maxlength="160">
+          </label>
+
+          <label>
+            Property address *
+            <input name="address" autocomplete="street-address"
+              maxlength="300" required>
+          </label>
+
+          <label>
+            Service interest *
+            <select name="service" required>
+              <option value="">Choose a service</option>
+              <option value="recurring">Recurring maintenance</option>
+              <option value="commercial-grounds">Commercial grounds care</option>
+              <option value="seasonal">Seasonal cleanup</option>
+              <option value="beds-mulch">Landscape beds / mulch</option>
+              <option value="multiple">Multiple services / not sure</option>
+            </select>
+          </label>
+
+          <label>
+            Preferred start
+            <select name="timeline">
+              <option value="flexible">Flexible / exploring options</option>
+              <option value="soon">As soon as available</option>
+              <option value="month">Within the next month</option>
+              <option value="next-season">Next season</option>
+            </select>
+          </label>
+
+          <label>
+            Property details
+            <textarea name="details" maxlength="3000"
+              placeholder="Tell us about your property and maintenance needs."></textarea>
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox" name="emailMarketing">
+            <span>
+              Email me occasional maintenance tips, service updates, and
+              offers from Thompson Landscape Company. Optional;
+              unsubscribe at any time.
+            </span>
+          </label>
+
+          <div class="hidden-field" aria-hidden="true">
+            <label>
+              Leave empty
+              <input name="website" tabindex="-1" autocomplete="off">
+            </label>
+          </div>
+
+          <button class="button" id="submit-button" type="submit">
+            Request my estimate
+          </button>
+
+          <p class="fine">
+            Your information will be used to respond to your request.
+            Marketing email is optional.
+          </p>
+
+          <p id="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="logo">
+        THOMPSON
+        <small>Landscape Company</small>
+      </div>
+      <p>Residential & commercial landscape maintenance</p>
+      <small>© <span id="year"></span> Thompson Landscape Company</small>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.querySelector("#lead-form");
+    const button = document.querySelector("#submit-button");
+    const status = document.querySelector("#status");
+    const params = new URLSearchParams(location.search);
+    let submissionId = crypto.randomUUID();
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+
+    document.querySelectorAll("[data-property]").forEach(link => {
+      link.addEventListener("click", () => {
+        document.querySelector("#property-type").value = link.dataset.property;
+      });
+    });
+
+    const property = params.get("property");
+    if (["residential", "commercial"].includes(property)) {
+      document.querySelector("#property-type").value = property;
+    }
+
+    form.addEventListener("submit", async event => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const fields = new FormData(form);
+      if (fields.get("website")) return;
+
+      const payload = Object.fromEntries(fields.entries());
+      payload.submissionId = submissionId;
+      payload.emailMarketingConsent = fields.get("emailMarketing") === "on";
+      payload.campaign = {
+        source: params.get("utm_source") || "",
+        medium: params.get("utm_medium") || "",
+        name: params.get("utm_campaign") || "",
+        content: params.get("utm_content") || ""
+      };
+      delete payload.emailMarketing;
+
+      button.disabled = true;
+      status.textContent = "Sending your request…";
+
+      try {
+        const response = await fetch("/api/leads", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(result.error || "Your request could not be sent.");
+        }
+
+        status.textContent =
+          "Thank you! Your request has been sent for review. " +
+          "Service is not booked yet.";
+
+        form.reset();
+        submissionId = crypto.randomUUID();
+      } catch (error) {
+        status.textContent = error.message + " Please try again.";
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
